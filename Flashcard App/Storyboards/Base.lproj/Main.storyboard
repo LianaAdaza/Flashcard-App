@@ -42,8 +42,30 @@
                                     <outletCollection property="gestureRecognizers" destination="KMj-kA-YhG" appends="YES" id="6J9-2J-zp9"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-za-Jaa">
+                                <rect key="frame" x="53" y="693" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Prev">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GlW-Ak-HBY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3h-Qh-8HJ">
+                                <rect key="frame" x="320" y="693" width="41" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdB-DN-sIh"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ose-CI-QKs">
-                                <rect key="frame" x="192" y="660" width="30" height="36"/>
+                                <rect key="frame" x="198" y="693" width="18" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="+">
@@ -61,6 +83,8 @@
                         <outlet property="backLabel" destination="wiK-bX-Dpv" id="zgi-uR-hoP"/>
                         <outlet property="card" destination="GfP-dr-UnC" id="VBK-Wh-BgE"/>
                         <outlet property="frontLabel" destination="CG0-Vx-GK0" id="SOi-k8-U27"/>
+                        <outlet property="nextButton" destination="N3h-Qh-8HJ" id="Zbz-PS-L2D"/>
+                        <outlet property="prevButton" destination="pvG-za-Jaa" id="hy2-6e-mt3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
