@@ -32,6 +32,9 @@ class firstViewController: UIViewController {
         
         // Update Buttons
         updateNextPrevButtons()
+        
+        // Animations
+        animatePrevCardOut()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
@@ -43,10 +46,21 @@ class firstViewController: UIViewController {
         
         // Update Buttons
         updateNextPrevButtons()
+        
+        // Animations
+        animateNextCardOut()
     }
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
         frontLabel.isHidden = true
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            self.frontLabel.isHidden = true
+        })
     }
     
     // Array to Hold Flashcards
@@ -117,6 +131,53 @@ class firstViewController: UIViewController {
             
             // Put all Cards in Flashcards Array
             flashcards.append(contentsOf: savedCards)
+        }
+    }
+    
+    // Animations
+    func animatePrevCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        }, completion: { finished in
+            
+            // Update Labels
+            self.updateLabels()
+            
+            // Run Other Animation
+            self.animatePrevCardIn()
+        })
+    }
+    
+    func animatePrevCardIn() {
+        // Start on the Right Side
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        
+        // Animate Card Going back to Original Position
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateNextCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            
+            // Update Labels
+            self.updateLabels()
+            
+            // Run Other Animation
+            self.animateNextCardIn()
+        })
+    }
+    
+    func animateNextCardIn() {
+        // Start on the Right Side
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        // Animate Card Going back to Original Position
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
     
